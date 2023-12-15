@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #result-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        input[type="button"] {
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>Comparison and Buttons</header>
+
+    <div id="result-container"></div>
+
+    <script>
+        function getUserInput(promptText) {
+            return prompt(promptText);
+        }
+
+        var firstInput = getUserInput("Enter the 1st input:");
+        var secondInput = getUserInput("Enter the 2nd input:");
+
+        function compareAndDisplay(firstInput, secondInput) {
+            var resultText;
+            if (firstInput > secondInput) {
+                document.body.style.backgroundColor = "lightblue";
+                resultText = firstInput + " > " + secondInput;
+            } else if (secondInput > firstInput) {
+                document.body.style.backgroundColor = "orange";
+                resultText = secondInput + " > " + firstInput;
+            } else {
+                document.body.style.backgroundColor = "lightyellow";
+                resultText = secondInput + " == " + firstInput;
+            }
+
+            alert(resultText);
+        }
+
+        function showFirstInput() {
+            alert("1st Input: " + firstInput);
+        }
+
+        function showSecondInput() {
+            alert("2nd Input: " + secondInput);
+        }
+
+        compareAndDisplay(firstInput, secondInput);
+    </script>
+
+    <div class="button-container">
+        <input type="button" value="Click for 1st input" onclick="showFirstInput()">
+        <input type="button" value="Click for 2nd input" onclick="showSecondInput()">
+    </div>
+
+</body>
+
+</html>
